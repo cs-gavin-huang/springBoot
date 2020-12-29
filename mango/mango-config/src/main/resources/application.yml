@@ -1,0 +1,19 @@
+server:
+  port: 8020
+spring:
+  application:
+    name: mango-config
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+    config:
+      label: master
+      server:
+        git:
+          uri: https://github.com/you-know-who-2017/springboot.git
+          search-paths: config-repo
+          username: you-know-who-2017
+          password: huangguoli2018
