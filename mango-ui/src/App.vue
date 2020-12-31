@@ -1,3 +1,11 @@
+<!--
+ * @Author: geekli
+ * @Date: 2020-12-30 01:36:43
+ * @LastEditTime: 2020-12-31 10:05:56
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: /mango-ui/src/App.vue
+-->
 <template>
   <div id="app">
     <img src="./assets/logo.png">

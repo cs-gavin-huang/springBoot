@@ -1,3 +1,11 @@
+/*
+ * @Author: geekli
+ * @Date: 2020-12-30 01:36:43
+ * @LastEditTime: 2020-12-31 09:37:59
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: /mango-ui/build/webpack.base.conf.js
+ */
 'use strict'
 const path = require('path')
 const utils = require('./utils')
@@ -64,6 +72,10 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: /\.scss$/,
+        loaders: ['style', 'css', 'sass']
       }
     ]
   },

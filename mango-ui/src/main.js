@@ -1,7 +1,7 @@
 /*
  * @Author: geekli
  * @Date: 2020-12-30 01:36:43
- * @LastEditTime: 2020-12-31 09:36:28
+ * @LastEditTime: 2020-12-31 12:43:35
  * @LastEditors: your name
  * @Description:
  * @FilePath: /mango-ui/src/main.js
@@ -11,6 +11,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.config.productionTip = false
