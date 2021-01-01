@@ -1,7 +1,7 @@
 /*
  * @Author: geekli
  * @Date: 2020-12-30 01:36:43
- * @LastEditTime: 2021-01-01 10:40:42
+ * @LastEditTime: 2021-01-01 10:49:45
  * @LastEditors: your name
  * @Description:
  * @FilePath: /mango-ui/src/main.js
@@ -15,7 +15,7 @@ import api from './http'
 import global from '@/utils/global'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-
+import 'font-awesome/css/font-awesome.min.css'
 Vue.use(ElementUI)  // 引入Element
 Vue.use(api)  // 引入API模块
 
