@@ -1,7 +1,7 @@
 <!--
  * @Author: geekli
  * @Date: 2021-01-01 13:05:42
- * @LastEditTime: 2021-01-01 13:08:18
+ * @LastEditTime: 2021-01-01 13:15:28
  * @LastEditors: your name
  * @Description:
  * @FilePath: /mango-ui/src/views/Core/MessagePanel.vue
@@ -40,35 +40,35 @@ export default {
           key: "1",
           avatar:'@/assets/user.png',
           content:'修改了用户密码',
-          sender:'诸葛亮',
+          sender:'葛',
           time:'5分钟前'
         },
         {
           key: "2",
           avatar:'@/assets/user.png',
           content:'修改了用户头像',
-          sender:'武则天',
+          sender:'武',
           time:'2小时前'
         },
         {
           key: "3",
           avatar:'@/assets/user.png',
           content:'今日25名新用户加入',
-          sender:'王语嫣',
+          sender:'王',
           time:'昨天'
         },
         {
           key: "4",
           avatar:'@/assets/user.png',
           content:'发表了一篇新随笔',
-          sender:'苍井空',
+          sender:'井',
           time:'昨天'
         },
         {
           key: "5",
           avatar:'@/assets/user.png',
           content:'发表了一篇新随笔',
-          sender:'上官婉儿',
+          sender:'婉',
           time:'前天'
         }]
     }
