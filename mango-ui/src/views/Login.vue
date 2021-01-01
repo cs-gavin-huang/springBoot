@@ -1,7 +1,7 @@
 <!--
  * @Author: geekli
  * @Date: 2020-12-31 09:35:19
- * @LastEditTime: 2021-01-01 11:07:39
+ * @LastEditTime: 2021-01-01 13:24:30
  * @LastEditors: your name
  * @Description:
  * @FilePath: /mango-ui/src/views/Login.vue
@@ -74,6 +74,7 @@ export default {
           } else {
             Cookies.set('token', res.data.token) // 放置token到Cookie
             sessionStorage.setItem('user', userInfo.account) // 保存用户到本地会话
+            this.$store.commit('menuRouteLoaded',false) //请求重新加载导航菜单
             this.$router.push('/')  // 登录成功，跳转到主页
           }
           this.loading = false
