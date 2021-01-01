@@ -1,7 +1,7 @@
 <!--
  * @Author: geekli
  * @Date: 2020-12-31 09:35:11
- * @LastEditTime: 2021-01-01 10:52:20
+ * @LastEditTime: 2021-01-01 11:00:36
  * @LastEditors: your name
  * @Description:
  * @FilePath: /mango-ui/src/views/Home.vue
@@ -13,6 +13,9 @@
     <el-button type="primary" @click="testAxios()">测试Axios调用</el-button>
     <el-button type="primary" @click="getUser()">获取用户信息</el-button>
     <el-button type="primary" @click="getMenu()">获取菜单信息</el-button>
+    <h3>{{$t('common.doc')}}</h3>
+    <el-button type="success" @click="changeLanguage('zh_cn')">简体中文</el-button>
+    <el-button type="success" @click="changeLanguage('en_us')">English</el-button>
   </div>
 </template>
 
@@ -22,6 +25,12 @@ import mock from '@/mock/index.js'
 export default {
   name: 'Home',
   methods: {
+    // 语言切换
+    changeLanguage(lang) {
+      lang === '' ? 'zh_cn' : lang
+      this.$i18n.locale = lang
+      this.langVisible = false
+    },
     testAxios() {
       axios.get('http://localhost:8080').then(res => { alert(res.data) })
     },
