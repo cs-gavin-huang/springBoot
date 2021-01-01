@@ -1,12 +1,12 @@
 /*
  * @Author: geekli
  * @Date: 2020-12-31 17:58:35
- * @LastEditTime: 2020-12-31 18:04:14
+ * @LastEditTime: 2021-01-01 01:33:08
  * @LastEditors: your name
  * @Description:
  * @FilePath: /mango-ui/src/http/config.js
  */
-import { baseUrl } from '@/util/global'
+import { baseUrl } from '@/utils/global'
 
 export default {
   method: 'get',

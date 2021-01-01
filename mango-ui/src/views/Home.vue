@@ -1,7 +1,7 @@
 <!--
  * @Author: geekli
  * @Date: 2020-12-31 09:35:11
- * @LastEditTime: 2020-12-31 09:48:47
+ * @LastEditTime: 2021-01-01 01:49:24
  * @LastEditors: your name
  * @Description:
  * @FilePath: /mango-ui/src/views/Home.vue
@@ -17,7 +17,7 @@
 
 <script>
 import axios from 'axios'
-import mock from '@/mock/mock.js'
+import mock from '@/mock/index.js'
 export default {
   name: 'Home',
   methods: {

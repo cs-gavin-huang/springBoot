@@ -1,7 +1,7 @@
 /*
  * @Author: geekli
  * @Date: 2020-12-30 01:36:43
- * @LastEditTime: 2021-01-01 01:30:26
+ * @LastEditTime: 2021-01-01 10:40:42
  * @LastEditors: your name
  * @Description:
  * @FilePath: /mango-ui/src/main.js
