@@ -1,7 +1,7 @@
 <!--
  * @Author: geekli
  * @Date: 2021-01-01 11:07:21
- * @LastEditTime: 2021-01-01 11:39:00
+ * @LastEditTime: 2021-01-01 13:39:38
  * @LastEditors: your name
  * @Description:
  * @FilePath: /mango-ui/src/views/NavBar.vue
@@ -13,19 +13,41 @@
         @click="$router.push('/')">
         <img v-if="collapse"  src="@/assets/logo.png"/> <div>{{collapse?'':appName}}</div>
     </div>
+    <!-- 导航菜单 -->
+    <el-menu ref="navmenu" default-active="1" :class="collapse?'menu-bar-collapse-width':'menu-bar-width'"
+      :collapse="collapse" :collapse-transition="false" :unique-opened="true  "
+      @open="handleopen" @close="handleclose" @select="handleselect">
+      <!-- 导航菜单树组件，动态加载菜单 -->
+      <menu-tree v-for="item in navTree" :key="item.id" :menu="item"></menu-tree>
+    </el-menu>
 	</div>
 </template>
 <script>
 
 import { mapState } from 'vuex'
+import MenuTree from "@/components/MenuTree"
 export default {
+  components:{
+        MenuTree
+  },
     computed: {
     ...mapState({
       appName: state=>state.app.appName,
+      themeColor: state=>state.app.themeColor,
       collapse: state=>state.app.collapse,
+      navTree: state=>state.menu.navTree
     })
   },
   methods: {
+    handleopen() {
+      console.log('handleopen')
+    },
+    handleclose() {
+      console.log('handleclose')
+    },
+    handleselect(a, b) {
+      console.log('handleselect')
+    }
   }
 }
 </script>
