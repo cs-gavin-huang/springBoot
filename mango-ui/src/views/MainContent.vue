@@ -1,13 +1,13 @@
 <!--
  * @Author: geekli
  * @Date: 2021-01-01 11:07:14
- * @LastEditTime: 2021-01-01 11:08:50
+ * @LastEditTime: 2021-01-01 11:38:37
  * @LastEditors: your name
  * @Description:
  * @FilePath: /mango-ui/src/views/MainContent.vue
 -->
 <template>
-  <div id="main-container" class="main-container" :class="'position-left'">
+  <div id="main-container" class="main-container" :class="$store.state.app.collapse?'position-collapse-left':'position-left'">
     <!-- 标签页 -->
     <div class="tab-container"></div>
     <!-- 主内容区域 -->
@@ -54,5 +54,8 @@ export default {
 }
 .position-left {
   left: 200px;
+}
+.position-collapse-left {
+  left: 65px;
 }
 </style>

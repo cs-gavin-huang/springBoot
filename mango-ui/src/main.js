@@ -1,7 +1,7 @@
 /*
  * @Author: geekli
  * @Date: 2020-12-30 01:36:43
- * @LastEditTime: 2021-01-01 11:25:50
+ * @LastEditTime: 2021-01-01 11:43:27
  * @LastEditors: your name
  * @Description:
  * @FilePath: /mango-ui/src/main.js
@@ -12,13 +12,15 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import api from './http'
+import i18n from './i18n'
+import store from './store'
 import global from '@/utils/global'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import 'font-awesome/css/font-awesome.min.css'
-import i18n from './i18n'
-Vue.use(ElementUI)  // 引入Element
-Vue.use(api)  // 引入API模块
+
+Vue.use(ElementUI)  // 注册使用Element
+Vue.use(api)  // 注册使用API模块
 
 Vue.prototype.global = global // 挂载全局配置模块
 

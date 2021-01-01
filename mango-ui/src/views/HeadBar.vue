@@ -1,13 +1,13 @@
 <!--
  * @Author: geekli
  * @Date: 2021-01-01 11:07:04
- * @LastEditTime: 2021-01-01 11:32:37
+ * @LastEditTime: 2021-01-01 11:50:04
  * @LastEditors: your name
  * @Description:
  * @FilePath: /mango-ui/src/views/HeadBar.vue
 -->
 <template>
-  <div class="headbar" style="background:#14889A" :class="'position-left'">
+  <div class="headbar" style="background:#14889A"
     :class="collapse?'position-collapse-left':'position-left'">
     <!-- 导航收缩 -->
     <span class="hamburg">
@@ -20,7 +20,7 @@
       <el-menu class="el-menu-demo" background-color="#14889A" text-color="#14889A" active-text-color="#14889A" mode="horizontal">
         <el-menu-item index="1">
           <!-- 用户信息 -->
-          <span class="user-info"><img src="@/assets/user.png"/>{{user.name}}</span>
+          <span class="user-info"><img :src="user.avatar"/>{{user.name}}</span>
         </el-menu-item>
       </el-menu>
     </span>
@@ -32,6 +32,9 @@ import { mapState } from 'vuex'
 import mock from "@/mock/index"
 import Hamburger from "@/components/Hamburger"
 export default {
+  components:{
+      Hamburger
+  },
   data() {
     return {
       user: {
@@ -48,7 +51,7 @@ export default {
     selectNavBar(key, keyPath) {
       console.log(key, keyPath)
     },
-    //折叠导航栏
+    // 折叠导航栏
     onCollapse: function() {
       this.$store.commit('onCollapse')
     },
@@ -80,7 +83,7 @@ export default {
   border-left-width: 1px;
   border-left-style: solid;
 }
-.navbar {
+.hamburg, .navbar {
   float: left;
 }
 .toolbar {
@@ -100,5 +103,8 @@ export default {
 }
 .position-left {
   left: 200px;
+}
+.position-collapse-left {
+  left: 65px;
 }
 </style>
