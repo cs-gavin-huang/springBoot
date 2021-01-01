@@ -1,7 +1,7 @@
 /*
  * @Author: geekli
  * @Date: 2020-12-30 01:36:43
- * @LastEditTime: 2021-01-01 10:59:04
+ * @LastEditTime: 2021-01-01 11:25:50
  * @LastEditors: your name
  * @Description:
  * @FilePath: /mango-ui/src/main.js
@@ -26,5 +26,6 @@ new Vue({
   el: '#app',
   i18n,
   router,
+  store,
   render: h => h(App)
 })
