@@ -1,7 +1,7 @@
 <!--
  * @Author: geekli
  * @Date: 2021-01-01 11:07:04
- * @LastEditTime: 2021-01-01 11:31:13
+ * @LastEditTime: 2021-01-01 11:32:37
  * @LastEditors: your name
  * @Description:
  * @FilePath: /mango-ui/src/views/HeadBar.vue
@@ -60,7 +60,7 @@ export default {
       this.user.avatar = require("@/assets/user.png")
     }
   },
-  computed() {
+  computed:{
     ...mapState({
       collapse: state=>state.app.collapse
     })
