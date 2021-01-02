@@ -1,11 +1,3 @@
-<!--
- * @Author: geekli
- * @Date: 2021-01-01 13:04:55
- * @LastEditTime: 2021-01-02 14:43:09
- * @LastEditors: your name
- * @Description:
- * @FilePath: /mango-ui/src/views/Core/PersonalPanel.vue
--->
 <template>
   <div class="personal-panel">
     <div class="personal-desc" :style="{'background':this.$store.state.app.themeColor}">
@@ -86,18 +78,20 @@ import { format } from "@/utils/datetime"
 export default {
   name: 'PersonalPanel',
   components:{
+    Backup
   },
   props: {
     user: {
       type: Object,
       default: {
-        name: "admin",
+        nickName: "admin-国立",
         avatar: "@/assets/user.png",
         role: "超级管理员",
         registeInfo: "注册时间：2020-12-25 "
       }
     }
-  },  data() {
+  },
+  data() {
     return {
       onlineUser: 0,
       accessTimes: 0,

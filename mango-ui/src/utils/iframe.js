@@ -1,11 +1,3 @@
-/*
- * @Author: geekli
- * @Date: 2021-01-01 01:27:11
- * @LastEditTime: 2021-01-01 01:28:34
- * @LastEditors: your name
- * @Description:
- * @FilePath: /mango-ui/src/utils/iframe.js
- */
 /**
  * 嵌套页面IFrame模块
  */

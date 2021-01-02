@@ -37,7 +37,7 @@
         </el-menu-item>
         <el-menu-item index="3" v-popover:popover-message>
           <!-- 我的私信 -->
-          <el-badge :value="5" :max="99" class="badge" type="error">
+          <el-badge :value="5" :max="99" class="badge">
             <li style="color:#fff;" class="fa fa-envelope-o fa-lg"></li>
           </el-badge>
           <el-popover ref="popover-message" placement="bottom-end" trigger="click">
@@ -46,7 +46,7 @@
         </el-menu-item>
         <el-menu-item index="4" v-popover:popover-notice>
           <!-- 系统通知 -->
-          <el-badge :value="4" :max="99" class="badge" type="error">
+          <el-badge :value="4" :max="99" class="badge">
             <li style="color:#fff;" class="fa fa-bell-o fa-lg"></li>
           </el-badge>
           <el-popover ref="popover-notice" placement="bottom-end" trigger="click">
@@ -55,7 +55,7 @@
         </el-menu-item>
         <el-menu-item index="5" v-popover:popover-personal>
           <!-- 用户信息 -->
-          <span class="user-info"><img :src="user.avatar" />{{user.name}}</span>
+          <span class="user-info"><img :src="user.avatar" />{{user.nickName}}</span>
           <el-popover ref="popover-personal" placement="bottom-end" trigger="click" :visible-arrow="false">
             <personal-panel :user="user"></personal-panel>
           </el-popover>
@@ -84,10 +84,6 @@ export default {
   data() {
     return {
       user: {
-        name: "Louis-国立",
-        avatar: "",
-        role: "超级管理员",
-        registeInfo: "注册时间：2020-12-20 "
       },
       activeIndex: '1',
       langVisible: false
@@ -118,8 +114,13 @@ export default {
   mounted() {
     var user = sessionStorage.getItem("user")
     if (user) {
-      this.user.name = user
-      this.user.avatar = require("@/assets/user.png")
+      let params = {name:user}
+      this.$api.user.findByName(params).then((res) => {
+				if(res.code == 200) {
+          this.user = res.data
+          this.user.avatar = require("@/assets/user.png")
+        }
+      })
     }
   },
   computed:{

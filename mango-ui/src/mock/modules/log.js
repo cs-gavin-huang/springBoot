@@ -1,12 +1,4 @@
 /*
- * @Author: geekli
- * @Date: 2021-01-01 10:30:49
- * @LastEditTime: 2021-01-01 10:38:00
- * @LastEditors: your name
- * @Description:
- * @FilePath: /mango-ui/src/mock/modules/log.js
- */
-/*
  * 操作日志模块
  */
 

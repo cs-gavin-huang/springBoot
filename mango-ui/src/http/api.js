@@ -1,12 +1,4 @@
-/*
- * @Author: geekli
- * @Date: 2020-12-31 17:58:22
- * @LastEditTime: 2021-01-01 10:39:25
- * @LastEditors: your name
- * @Description:
- * @FilePath: /mango-ui/src/http/api.js
- */
-/*
+/* 
  * 接口统一集成模块
  */
 import * as login from './modules/login'

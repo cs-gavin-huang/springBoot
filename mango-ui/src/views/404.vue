@@ -1,11 +1,3 @@
-<!--
- * @Author: geekli
- * @Date: 2020-12-31 09:35:03
- * @LastEditTime: 2020-12-31 09:35:03
- * @LastEditors: your name
- * @Description:
- * @FilePath: /mango-ui/src/components/404.vue
--->
 <template>
   <div class="site-wrapper site-page--not-found">
     <div class="site-content__wrapper">
