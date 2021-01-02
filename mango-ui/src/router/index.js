@@ -1,7 +1,7 @@
 /*
  * @Author: geekli
  * @Date: 2020-12-30 01:36:43
- * @LastEditTime: 2021-01-01 13:33:31
+ * @LastEditTime: 2021-01-02 13:30:26
  * @LastEditors: your name
  * @Description:
  * @FilePath: /mango-ui/src/router/index.js
@@ -13,19 +13,34 @@ import Home from '@/views/Home'
 import NotFound from '@/views/404'
 import api from '@/http/api'
 import store from '@/store'
+import Intro from '@/views/Intro/Intro'
+
 Vue.use(Router)
 
 const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
-      component: Home
-    }, {
+      name: '首页',
+      component: Home,
+      children: [
+        {
+          path: '',
+          name: '系统介绍',
+          component: Intro,
+          meta: {
+            icon: 'fa fa-home fa-lg',
+            index: 0
+          }
+        }
+      ]
+    },
+    {
       path: '/login',
-      name: 'Login',
+      name: '登录',
       component: Login
-    }, {
+    },
+    {
       path: '/404',
       name: 'notFound',
       component: NotFound

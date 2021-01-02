@@ -32,7 +32,7 @@
 				<el-button :size="size" type="primary" @click.native="handleFilterColumns">{{$t('action.comfirm')}}</el-button>
 			</div>
 		</el-dialog>
-</template>
+</template>w
 
 <script>
 export default {
