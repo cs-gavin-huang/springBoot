@@ -1,24 +1,20 @@
-/*
- * @Author: geekli
- * @Date: 2020-12-31 17:58:43
- * @LastEditTime: 2020-12-31 18:15:47
- * @LastEditors: your name
- * @Description:
- * @FilePath: /mango-ui/src/http/index.js
- */
+// 导入所有接口
 import api from './api'
+
 const install = Vue => {
-  if (install.installed)
-    return;
-  install.installed = true;
-  Object.defineProperties(Vue.prototype, {
-    //此处挂在在Vue原型的$api对象上
-    $api: {
-      get() {
-        return api
-      }
-    }
-  })
+    if (install.installed)
+        return;
+
+    install.installed = true;
+
+    Object.defineProperties(Vue.prototype, {
+        // 注意，此处挂载在 Vue 原型的 $api 对象上
+        $api: {
+            get() {
+                return api
+            }
+        }
+    })
 }
 
 export default install

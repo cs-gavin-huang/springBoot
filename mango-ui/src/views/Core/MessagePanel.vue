@@ -1,11 +1,3 @@
-<!--
- * @Author: geekli
- * @Date: 2021-01-01 13:05:42
- * @LastEditTime: 2021-01-01 13:15:28
- * @LastEditors: your name
- * @Description:
- * @FilePath: /mango-ui/src/views/Core/MessagePanel.vue
--->
 <template>
   <div class="message-panel">
     <div class="message-header">您有 {{data.length}} 条消息</div>
@@ -39,35 +31,35 @@ export default {
         {
           key: "1",
           avatar:'@/assets/user.png',
-          content:'修改了用户密码',
+          content:'你修改了用户密码',
           sender:'葛',
           time:'5分钟前'
         },
         {
           key: "2",
           avatar:'@/assets/user.png',
-          content:'修改了用户头像',
+          content:'你修改了用户头像',
           sender:'武',
           time:'2小时前'
         },
         {
           key: "3",
           avatar:'@/assets/user.png',
-          content:'今日25名新用户加入',
+          content:'今日25名新成员加入',
           sender:'王',
           time:'昨天'
         },
         {
           key: "4",
           avatar:'@/assets/user.png',
-          content:'发表了一篇新随笔',
+          content:'你发表了一篇新随笔',
           sender:'井',
           time:'昨天'
         },
         {
           key: "5",
           avatar:'@/assets/user.png',
-          content:'发表了一篇新随笔',
+          content:'你发表了一篇新随笔',
           sender:'婉',
           time:'前天'
         }]
