@@ -1,7 +1,7 @@
 <!--
  * @Author: geekli
  * @Date: 2021-01-01 13:35:13
- * @LastEditTime: 2021-01-01 13:35:14
+ * @LastEditTime: 2021-01-02 14:15:47
  * @LastEditors: your name
  * @Description:
  * @FilePath: /mango-ui/src/components/MenuTree/index.vue
@@ -32,8 +32,13 @@ export default {
   },
   methods: {
     handleRoute (menu) {
+      // 如果是嵌套页面，转换成iframe的path
+      let path = getIFramePath(menu.url)
+      if(!path) {
+        path = menu.url
+      }
       // 通过菜单URL跳转至指定路由
-      this.$router.push("/" + menu.url)
+      this.$router.push("/" + path)
     }
   }
 }
