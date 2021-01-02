@@ -1,3 +1,11 @@
+<!--
+ * @Author: geekli
+ * @Date: 2021-01-02 13:07:42
+ * @LastEditTime: 2021-01-02 13:08:21
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: /mango-ui/src/components/PopupTreeInput/index.vue
+-->
 <template>
   <div>
     <el-popover ref="popover" :placement="placement" trigger="click">

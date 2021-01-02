@@ -1,3 +1,11 @@
+<!--
+ * @Author: geekli
+ * @Date: 2021-01-01 11:07:14
+ * @LastEditTime: 2021-01-01 14:09:51
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: /mango-ui/src/views/MainContent.vue
+-->
 <template>
   <div id="main-container" class="main-container" :class="$store.state.app.collapse?'position-collapse-left':'position-left'">
     <!-- 标签页 -->

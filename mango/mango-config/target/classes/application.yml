@@ -16,7 +16,7 @@ spring:
           uri: https://github.com/you-know-who-2017/springboot.git
           search-paths: config-repo
           username: you-know-who-2017
-          password: huangguoli2020
+          password: huangguoli2018
   rabbitmq:
     host: localhost
     port: 5672

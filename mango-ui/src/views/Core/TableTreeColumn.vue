@@ -1,3 +1,11 @@
+<!--
+ * @Author: geekli
+ * @Date: 2021-01-02 13:46:10
+ * @LastEditTime: 2021-01-02 13:46:17
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: /mango-ui/src/views/Core/TableTreeColumn.vue
+-->
 <template>
   <el-table-column :prop="prop" v-bind="$attrs">
     <template slot-scope="scope">

@@ -1,3 +1,11 @@
+<!--
+ * @Author: geekli
+ * @Date: 2021-01-01 12:51:42
+ * @LastEditTime: 2021-01-01 12:51:58
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: /mango-ui/src/components/ThemePicker/index.vue
+-->
 <template>
   <el-color-picker class="theme-picker" popper-class="theme-picker-dropdown"
     v-model="theme" :size="size">

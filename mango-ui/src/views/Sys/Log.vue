@@ -1,3 +1,11 @@
+<!--
+ * @Author: geekli
+ * @Date: 2021-01-02 14:03:04
+ * @LastEditTime: 2021-01-02 14:20:44
+ * @LastEditors: your name
+ * @Description: 
+ * @FilePath: /mango-ui/src/views/Sys/Log.vue
+-->
 <template>
   <div class="page-container">
 	<!--工具栏-->

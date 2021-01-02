@@ -1,9 +1,17 @@
+<!--
+ * @Author: geekli
+ * @Date: 2021-01-02 14:34:51
+ * @LastEditTime: 2021-01-02 14:35:00
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: /mango-ui/src/views/Backup/Backup.vue
+-->
 <template>
 	<!--备份还原界面-->
 	<el-dialog :title="$t('common.backupRestore')" width="40%" :visible.sync="backupVisible" :close-on-click-modal="false" :modal=false>
         <el-table :data="tableData" style="width: 100%;font-size:16px;" height="330px" :show-header="showHeader"
             size="mini" v-loading="tableLoading" :element-tableLoading-text="$t('action.loading')">
-            <el-table-column prop="title" :label="$t('common.versionName')" header-align="center" align="center">  
+            <el-table-column prop="title" :label="$t('common.versionName')" header-align="center" align="center">
             </el-table-column>
             <el-table-column fixed="right" :label="$t('action.operation')" width="180">
                 <template slot-scope="scope">

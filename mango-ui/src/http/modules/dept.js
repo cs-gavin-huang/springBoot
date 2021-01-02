@@ -1,6 +1,14 @@
+/*
+ * @Author: geekli
+ * @Date: 2020-12-31 17:59:02
+ * @LastEditTime: 2021-01-01 01:24:48
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: /mango-ui/src/http/modules/dept.js
+ */
 import axios from '../axios'
 
-/* 
+/*
  * 机构管理模块
  */
 

@@ -1,12 +1,18 @@
+<!--
+ * @Author: geekli
+ * @Date: 2021-01-02 13:10:40
+ * @LastEditTime: 2021-01-02 13:11:59
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: /mango-ui/src/views/Intro/Intro.vue
+-->
 <template>
   <div class="page-container" style="width:99%;margin-top:15px;">
     <el-carousel :interval="3000" type="card" height="450px" class="carousel">
       <el-carousel-item class="carousel-item-intro">
         <h2>项目介绍</h2>
         <ul>
-          <li>基于 Spring Boot、Spring Cloud、Vue、Element 的 Java EE 快速开发平台</li>
-          <li>旨在提供一套简洁易用的解决方案，帮助用户有效降低项目开发难度和成本</li>
-          <li>博客提供项目开发过程同步系列教程文章，手把手的教你如何开发同类系统</li>
+          <li>基于 Spring Boot、Spring Cloud、Vue、Element 的 Java EE 的权限管理系统</li>
         </ul>
         <div><img src="@/assets/logo.png" style="width:120px;height:120px;padding-top:15px;" /></div>
       </el-carousel-item>

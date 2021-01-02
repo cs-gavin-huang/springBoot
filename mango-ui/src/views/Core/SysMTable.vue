@@ -1,3 +1,11 @@
+<!--
+ * @Author: geekli
+ * @Date: 2021-01-01 14:01:32
+ * @LastEditTime: 2021-01-01 14:05:18
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: /mango-ui/src/views/Core/SysMTable.vue
+-->
 <template>
   <div>
     <!--表格栏-->
@@ -50,7 +58,7 @@ export default {
     },
     maxHeight: {  // 表格最大高度
       type: Number,
-      default: 440
+      default: 420
     },
     showOperation: {  // 是否显示操作组件
       type: Boolean,
@@ -82,7 +90,7 @@ export default {
       // 分页信息
 			pageRequest: {
 				pageNum: 1,
-        pageSize: 9
+        pageSize: 10
       },
       loading: false,  // 加载标识
       selections: []  // 列表选中列

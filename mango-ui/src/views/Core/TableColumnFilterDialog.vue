@@ -1,3 +1,11 @@
+<!--
+ * @Author: geekli
+ * @Date: 2021-01-02 13:08:04
+ * @LastEditTime: 2021-01-02 13:08:42
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: /mango-ui/src/views/Core/TableColumnFilterDialog.vue
+-->
 <template>
 		<!--表格显示列界面-->
 		<el-dialog title="表格显示列" width="40%" :visible.sync="dialogVisible" :close-on-click-modal="false">
@@ -24,7 +32,7 @@
 				<el-button :size="size" type="primary" @click.native="handleFilterColumns">{{$t('action.comfirm')}}</el-button>
 			</div>
 		</el-dialog>
-</template>
+</template>w
 
 <script>
 export default {
@@ -51,7 +59,7 @@ export default {
     // 选择切换
     selectionChange: function (selections) {
       this.selections = selections
-      
+
     },
     // 设置可见性
     setDialogVisible: function (visible) {

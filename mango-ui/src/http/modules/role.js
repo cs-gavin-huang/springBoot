@@ -1,6 +1,14 @@
+/*
+ * @Author: geekli
+ * @Date: 2020-12-31 17:59:44
+ * @LastEditTime: 2021-01-01 10:39:47
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: /mango-ui/src/http/modules/role.js
+ */
 import axios from '../axios'
 
-/* 
+/*
  * 角色管理模块
  */
 

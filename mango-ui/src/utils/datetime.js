@@ -1,3 +1,11 @@
+/*
+ * @Author: geekli
+ * @Date: 2021-01-01 01:26:56
+ * @LastEditTime: 2021-01-01 01:28:54
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: /mango-ui/src/utils/datetime.js
+ */
 /**
  * 时间日期相关操作
  */

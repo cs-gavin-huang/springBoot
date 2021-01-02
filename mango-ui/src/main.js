@@ -1,3 +1,13 @@
+/*
+ * @Author: geekli
+ * @Date: 2020-12-30 01:36:43
+ * @LastEditTime: 2021-01-02 14:33:31
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: /mango-ui/src/main.js
+ */
+// The Vue build version to load with the `import` command
+// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
 import router from './router'

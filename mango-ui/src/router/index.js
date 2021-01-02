@@ -1,13 +1,20 @@
+/*
+ * @Author: geekli
+ * @Date: 2020-12-30 01:36:43
+ * @LastEditTime: 2021-01-02 14:13:01
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: /mango-ui/src/router/index.js
+ */
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/views/Login'
-import NotFound from '@/views/404'
 import Home from '@/views/Home'
-import Intro from '@/views/Intro/Intro'
+import NotFound from '@/views/404'
 import api from '@/http/api'
 import store from '@/store'
+import Intro from '@/views/Intro/Intro'
 import { getIFramePath, getIFrameUrl } from '@/utils/iframe'
-
 Vue.use(Router)
 
 const router = new Router({
@@ -17,9 +24,9 @@ const router = new Router({
       name: '首页',
       component: Home,
       children: [
-        { 
-          path: '', 
-          name: '系统介绍', 
+        {
+          path: '',
+          name: '系统介绍',
           component: Intro,
           meta: {
             icon: 'fa fa-home fa-lg',
@@ -41,6 +48,8 @@ const router = new Router({
   ]
 })
 
+
+//导航守卫
 router.beforeEach((to, from, next) => {
   // 登录界面登录成功之后，会把用户信息保存在会话
   // 存在时间为会话生命周期，页面关闭即失效。
@@ -64,12 +73,11 @@ router.beforeEach((to, from, next) => {
   }
 })
 
+
 /**
 * 加载动态菜单和路由
 */
 function addDynamicMenuAndRoutes(userName, to, from) {
-  // 处理IFrame嵌套页面
-  handleIFrameUrl(to.path)
   if(store.state.app.menuRouteLoaded) {
     console.log('动态菜单和路由已经存在.')
     return
@@ -78,7 +86,6 @@ function addDynamicMenuAndRoutes(userName, to, from) {
   .then(res => {
     // 添加动态路由
     let dynamicRoutes = addDynamicRoutes(res.data)
-    // 处理静态组件绑定路由
     router.options.routes[0].children = router.options.routes[0].children.concat(dynamicRoutes)
     router.addRoutes(router.options.routes)
     // 保存加载状态
@@ -134,6 +141,7 @@ function addDynamicRoutes (menuList = [], routes = []) {
           index: menuList[i].id
         }
       }
+      // 绑定嵌套组件
       let path = getIFramePath(menuList[i].url)
       if (path) {
         // 如果是嵌套页面, 通过iframe展示

@@ -1,3 +1,11 @@
+<!--
+ * @Author: geekli
+ * @Date: 2020-12-30 01:36:43
+ * @LastEditTime: 2021-01-01 10:40:31
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: /mango-ui/src/App.vue
+-->
 <template>
   <div id="app">
     <router-view/>

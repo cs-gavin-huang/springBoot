@@ -1,3 +1,11 @@
+<!--
+ * @Author: geekli
+ * @Date: 2021-01-01 13:35:13
+ * @LastEditTime: 2021-01-02 14:15:47
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: /mango-ui/src/components/MenuTree/index.vue
+-->
 <template>
   <el-submenu v-if="menu.children && menu.children.length >= 1" :index="'' + menu.id">
     <template slot="title">

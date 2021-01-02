@@ -1,3 +1,11 @@
+<!--
+ * @Author: geekli
+ * @Date: 2021-01-01 13:56:50
+ * @LastEditTime: 2021-01-01 14:04:11
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: /mango-ui/src/views/Sys/User.vue
+-->
 <template>
   <div class="page-container">
 	<!--工具栏-->
@@ -10,7 +18,7 @@
 				<sysm-button icon="fa fa-search" :label="$t('action.search')" perms="sys:role:view" type="primary" @click="findPage(null)"/>
 			</el-form-item>
 			<el-form-item>
-				<sysm-button icon="fa fa-plus" :label="$t('action.add')" perms="sys:user:add" type="primary" @click="handleAdd" />
+				<sysm-button icon="fa fa-plus" :label="$t('action.add')" perms="sys:user:add2" type="primary" @click="handleAdd" />
 			</el-form-item>
 		</el-form>
 	</div>
@@ -25,7 +33,7 @@
 					<el-button icon="fa fa-filter" @click="displayFilterColumnsDialog"></el-button>
 				</el-tooltip>
 				<el-tooltip content="导出" placement="top">
-					<el-button icon="fa fa-file-excel-o" @click="exportUserExcelFile"></el-button>
+					<el-button icon="fa fa-file-excel-o"></el-button>
 				</el-tooltip>
 				</el-button-group>
 			</el-form-item>
@@ -49,9 +57,6 @@
 			</el-form-item>
 			<el-form-item label="用户名" prop="name">
 				<el-input v-model="dataForm.name" auto-complete="off"></el-input>
-			</el-form-item>
-			<el-form-item label="昵称" prop="nickName">
-				<el-input v-model="dataForm.nickName" auto-complete="off"></el-input>
 			</el-form-item>
 			<el-form-item label="密码" prop="password">
 				<el-input v-model="dataForm.password" type="password" auto-complete="off"></el-input>
@@ -109,7 +114,7 @@ export default {
 			},
 			columns: [],
 			filterColumns: [],
-			pageRequest: { pageNum: 1, pageSize: 8 },
+			pageRequest: { pageNum: 1, pageSize: 10 },
 			pageResult: {},
 
 			operation: false, // true:新增, false:编辑
@@ -146,23 +151,11 @@ export default {
 			if(data !== null) {
 				this.pageRequest = data.pageRequest
 			}
-			this.pageRequest.params = [{name:'name', value:this.filters.name}]
+			this.pageRequest.columnFilters = {name: {name:'name', value:this.filters.name}}
 			this.$api.user.findPage(this.pageRequest).then((res) => {
 				this.pageResult = res.data
 				this.findUserRoles()
 			}).then(data!=null?data.callback:'')
-		},
-		// 导出Excel用户信息
-		exportUserExcelFile: function () {
-			this.pageRequest.pageSize = 100000
-			this.pageRequest.params = [{name:'name', value:this.filters.name}]
-			this.$api.user.exportUserExcelFile(this.pageRequest).then((res) => {
-				this.$alert(res.data, '导出成功', {
-					confirmButtonText: '确定',
-					callback: action => {
-					}
-				})
-			})
 		},
 		// 加载用户角色信息
 		findUserRoles: function () {
@@ -186,7 +179,7 @@ export default {
 				deptId: 1,
 				deptName: '',
 				email: 'test@qq.com',
-				mobile: '13889700023',
+				mobile: '17380695136',
 				status: 1,
 				userRoles: []
 			}
@@ -262,7 +255,6 @@ export default {
 			this.columns = [
 				{prop:"id", label:"ID", minWidth:50},
 				{prop:"name", label:"用户名", minWidth:120},
-				{prop:"nickName", label:"昵称", minWidth:120},
 				{prop:"deptName", label:"机构", minWidth:120},
 				{prop:"roleNames", label:"角色", minWidth:100},
 				{prop:"email", label:"邮箱", minWidth:120},

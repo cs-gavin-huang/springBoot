@@ -1,3 +1,11 @@
+<!--
+ * @Author: geekli
+ * @Date: 2021-01-01 13:54:52
+ * @LastEditTime: 2021-01-01 13:55:16
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: /mango-ui/src/views/Core/SysMButton.vue
+-->
 <template>
   <el-button :size="size" :type="type" :icon="icon"
     :loading="loading" :disabled="!hasPerms(perms)" @click="handleClick">

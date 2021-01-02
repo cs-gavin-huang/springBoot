@@ -1,4 +1,11 @@
-  
+<!--
+ * @Author: geekli
+ * @Date: 2021-01-02 13:51:02
+ * @LastEditTime: 2021-01-02 13:51:02
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: /mango-ui/src/components/FalconTooltip/index.vue
+-->
 <template>
   <el-tooltip class="tooltip" placement="top" effect="light">
     <div slot="content">

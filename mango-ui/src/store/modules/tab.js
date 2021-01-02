@@ -1,3 +1,11 @@
+/*
+ * @Author: geekli
+ * @Date: 2021-01-01 14:07:12
+ * @LastEditTime: 2021-01-01 14:07:13
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: /mango-ui/src/store/modules/tab.js
+ */
 export default {
   state: {
     // 主入口标签页

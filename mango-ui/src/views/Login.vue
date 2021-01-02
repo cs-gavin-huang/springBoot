@@ -1,3 +1,11 @@
+<!--
+ * @Author: geekli
+ * @Date: 2020-12-31 09:35:19
+ * @LastEditTime: 2021-01-02 17:17:47
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: /mango-ui/src/views/Login.vue
+-->
 <template>
   <el-form :model="loginForm" :rules="fieldRules" ref="loginForm" label-position="left" label-width="0px" class="demo-ruleForm login-container">
     <span class="tool-bar">

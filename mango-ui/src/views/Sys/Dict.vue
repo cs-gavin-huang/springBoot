@@ -53,13 +53,13 @@
 </template>
 
 <script>
-import SysMTable from "@/views/Core/SysMTable"
 import SysMButton from "@/views/Core/SysMButton"
+import SysMTable from "@/views/Core/SysMTable"
 import { format } from "@/utils/datetime"
 export default {
 	components:{
-			SysMTable,
-			SysMButton
+			SysMButton,
+			SysMTable
 	},
 	data() {
 		return {

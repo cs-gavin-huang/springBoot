@@ -1,16 +1,24 @@
-export default {
-    state: {
-        navTree: [],  // 导航菜单树
-    },
-    getters: {
-   
-    },
-    mutations: {
-        setNavTree(state, navTree){  // 设置导航菜单树
-            state.navTree = navTree;
-        }
-    },
-    actions: {
-        
+/*
+ * @Author: geekli
+ * @Date: 2021-01-01 13:19:14
+ * @LastEditTime: 2021-01-01 13:21:37
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: /mango-ui/src/store/modules/menu.js
+ */
+export default{
+  state: {
+    navTree: [],
+  },
+  getters: {
+
+  },
+  mutations: {
+    setNavTree(state, navTree){
+      state.navTree = navTree;
     }
+  },
+  actions: {
+
+  }
 }
