@@ -16,7 +16,7 @@ import com.louis.mango.admin.util.SecurityUtils;
 /**
  * 登录认证过滤器
  * @author Louis
- * @date Jan 14, 2019
+ * @date Jan 14, 2021
  */
 public class JwtAuthenticationFilter extends BasicAuthenticationFilter {
 

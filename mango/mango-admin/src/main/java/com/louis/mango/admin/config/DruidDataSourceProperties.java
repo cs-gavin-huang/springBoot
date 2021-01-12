@@ -2,11 +2,6 @@ package com.louis.mango.admin.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-/**
- * 数据源属性
- * @author Louis
- * @date Jan 12, 2019
- */
 @ConfigurationProperties(prefix = "spring.datasource.druid")
 public class DruidDataSourceProperties {
 

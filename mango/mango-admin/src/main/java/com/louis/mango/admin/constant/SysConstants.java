@@ -1,10 +1,14 @@
+/*
+ * @Author: geekli
+ * @Date: 2020-12-21 09:04:00
+ * @LastEditTime: 2021-01-12 16:47:26
+ * @LastEditors: your name
+ * @Description: 
+ * @FilePath: /springBoot/mango/mango-admin/src/main/java/com/louis/mango/admin/constant/SysConstants.java
+ */
 package com.louis.mango.admin.constant;
 
-/**
- * 常量管理
- * @author Louis
- * @date Jan 13, 2019
- */
+
 public interface SysConstants {
 
 	/**

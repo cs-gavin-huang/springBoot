@@ -8,7 +8,7 @@ import com.louis.mango.core.service.CurdService;
 /**
  * 菜单管理
  * @author Louis
- * @date Jan 13, 2019
+ * @date Jan 13, 2021
  */
 public interface SysMenuService extends CurdService<SysMenu> {
 

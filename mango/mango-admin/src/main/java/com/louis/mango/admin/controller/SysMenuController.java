@@ -17,7 +17,7 @@ import com.louis.mango.core.http.HttpResult;
 /**
  * 菜单控制器
  * @author Louis
- * @date Jan 13, 2019
+ * @date Jan 13, 2021
  */
 @RestController
 @RequestMapping("menu")

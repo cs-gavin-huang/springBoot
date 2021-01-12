@@ -1,3 +1,11 @@
+/*
+ * @Author: geekli
+ * @Date: 2020-12-21 09:04:00
+ * @LastEditTime: 2021-01-12 16:47:10
+ * @LastEditors: your name
+ * @Description: 
+ * @FilePath: /springBoot/mango/mango-admin/src/main/java/com/louis/mango/admin/config/DruidConfig.java
+ */
 package com.louis.mango.admin.config;
 
 import java.sql.SQLException;
@@ -18,11 +26,6 @@ import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
 
-/**
- * Druid数据源配置
- * @author Louis
- * @date Jan 12, 2019
- */
 @Configuration
 @EnableConfigurationProperties({DruidDataSourceProperties.class})
 public class DruidConfig {

@@ -13,7 +13,7 @@ import com.louis.mango.admin.security.JwtAuthenticatioToken;
 /**
  * Security相关操作
  * @author Louis
- * @date Jan 14, 2019
+ * @date Jan 14, 2021
  */
 public class SecurityUtils {
 

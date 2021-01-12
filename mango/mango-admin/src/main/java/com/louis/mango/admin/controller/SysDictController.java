@@ -16,11 +16,7 @@ import com.louis.mango.admin.service.SysDictService;
 import com.louis.mango.core.http.HttpResult;
 import com.louis.mango.core.page.PageRequest;
 
-/**
- * 字典控制器
- * @author Louis
- * @date Jan 13, 2019
- */
+
 @RestController
 @RequestMapping("dict")
 public class SysDictController {

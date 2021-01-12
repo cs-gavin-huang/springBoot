@@ -16,7 +16,7 @@ import com.louis.mango.core.page.PageRequest;
 /**
  * 登录日志控制器
  * @author Louis
- * @date Jan 13, 2019
+ * @date Jan 13, 2021
  */
 @RestController
 @RequestMapping("loginlog")

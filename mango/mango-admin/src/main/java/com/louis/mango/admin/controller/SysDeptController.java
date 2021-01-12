@@ -1,3 +1,11 @@
+/*
+ * @Author: geekli
+ * @Date: 2020-12-21 09:04:00
+ * @LastEditTime: 2021-01-12 16:47:36
+ * @LastEditors: your name
+ * @Description: 
+ * @FilePath: /springBoot/mango/mango-admin/src/main/java/com/louis/mango/admin/controller/SysDeptController.java
+ */
 package com.louis.mango.admin.controller;
 
 import java.util.List;
@@ -13,11 +21,7 @@ import com.louis.mango.admin.model.SysDept;
 import com.louis.mango.admin.service.SysDeptService;
 import com.louis.mango.core.http.HttpResult;
 
-/**
- * 机构控制器
- * @author Louis
- * @date Jan 13, 2019
- */
+
 @RestController
 @RequestMapping("dept")
 public class SysDeptController {

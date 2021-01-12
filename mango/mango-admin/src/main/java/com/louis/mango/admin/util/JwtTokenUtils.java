@@ -21,7 +21,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 /**
  * JWT工具类
  * @author Louis
- * @date Jan 14, 2019
+ * @date Jan 14, 2021
  */
 public class JwtTokenUtils implements Serializable {
 
