@@ -1,3 +1,11 @@
+/*
+ * @Author: geekli
+ * @Date: 2020-12-29 10:14:13
+ * @LastEditTime: 2021-01-12 16:48:44
+ * @LastEditors: your name
+ * @Description: 
+ * @FilePath: /springBoot/mango/mango-admin/src/main/java/com/louis/mango/admin/config/WebSecurityConfig.java
+ */
 package com.louis.mango.admin.config;
 
 import com.louis.mango.admin.security.JwtAuthenticationFilter;
@@ -32,7 +40,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        // 禁用 csrf, 由于使用的是JWT，我们这里不需要csrf
+        // 禁用 csrf, 由于使用的是JWT，这里不需要csrf
         http.cors().and().csrf().disable()
                 .authorizeRequests()
                 // 跨域预检请求
