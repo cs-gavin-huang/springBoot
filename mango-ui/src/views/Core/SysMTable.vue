@@ -33,7 +33,7 @@ import SysMButton from "@/views/Core/SysMButton"
 export default {
   name: 'SysMTable',
   components:{
-			SysMButton
+			'sysm-button': SysMButton
 	},
   props: {
     columns: Array, // 表格列配置

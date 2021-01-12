@@ -68,8 +68,8 @@ import TableTreeColumn from '@/views/Core/TableTreeColumn'
 import { format } from "@/utils/datetime"
 export default {
 	components:{
-		SysMTable,
-		SysMButton,
+			'sysm-table': SysMTable,
+			'sysm-button': SysMButton,
 		TableTreeColumn
 	},
 	data() {

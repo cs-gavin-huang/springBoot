@@ -1,3 +1,11 @@
+<!--
+ * @Author: geekli
+ * @Date: 2020-12-21 09:03:59
+ * @LastEditTime: 2021-01-12 19:55:39
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: /springBoot/mango-ui/src/views/Sys/Log.vue
+-->
 <template>
   <div class="page-container">
 	<!--工具栏-->
@@ -24,8 +32,8 @@ import SysMButton from "@/views/Core/SysMButton"
 import { format } from "@/utils/datetime"
 export default {
 	components: {
-		SysMTable,
-		SysMButton
+			'sysm-table': SysMTable,
+			'sysm-button': SysMButton
 	},
 	data() {
 		return {

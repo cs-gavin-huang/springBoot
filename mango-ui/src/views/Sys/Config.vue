@@ -58,8 +58,8 @@ import SysMButton from "@/views/Core/SysMButton"
 import { format } from "@/utils/datetime"
 export default {
 	components:{
-			SysMTable,
-			SysMButton
+			'sysm-table': SysMTable,
+			'sysm-button': SysMButton
 	},
 	data() {
 		return {

@@ -97,8 +97,8 @@ import { format } from "@/utils/datetime"
 export default {
 	components:{
 		PopupTreeInput,
-		SysMTable,
-		SysMButton,
+			'sysm-table': SysMTable,
+			'sysm-button': SysMButton,
 		TableColumnFilterDialog
 	},
 	data() {

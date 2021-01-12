@@ -4,14 +4,12 @@
       <el-carousel-item class="carousel-item-intro">
         <h2>项目介绍</h2>
         <ul>
-          <li>基于 Spring Boot、Spring Cloud、Vue、Element 的 Java EE 快速开发平台</li>
-          <li>旨在提供一套简洁易用的解决方案，帮助用户有效降低项目开发难度和成本</li>
-          <li>博客提供项目开发过程同步系列教程文章，手把手的教你如何开发同类系统</li>
+          <li>基于 Spring Boot、Spring Cloud、Vue、Element 的 Java EE 权限管理系统</li>
         </ul>
         <div><img src="@/assets/logo.png" style="width:120px;height:120px;padding-top:15px;" /></div>
       </el-carousel-item>
       <el-carousel-item class="carousel-item-func">
-        <h2>功能计划</h2>
+        <h2>功能</h2>
         <ul>
           <li>✔ 系统登录：系统用户登录，系统登录认证（token方式）</li>
           <li>✔ 用户管理：新建用户，修改用户，删除用户，查询用户</li>
@@ -30,7 +28,7 @@
       <el-carousel-item class="carousel-item-env">
         <h2>开发环境</h2>
         <ul>
-          <li>IDE : eclipse 4.6.x。     JDK : JDK 1.8.x。</li>
+          <li>IDE : idea 2020。     JDK : JDK 1.8.x。</li>
           <li>Maven : Maven 3.5.x。   MySQL: MySQL 5.7.x。</li>
           <li>IDE : VS Code 1.27。    Webpack：webpack 3.2.x。</li>
           <li>NODE: Node 8.9.x。      NPM : NPM 6.4.x。</li>

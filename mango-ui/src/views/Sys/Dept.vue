@@ -77,7 +77,7 @@ import { format } from "@/utils/datetime"
 export default {
 	components:{
     PopupTreeInput,
-    SysMButton,
+		'sysm-button': SysMButton,
     TableTreeColumn,
     FaIconTooltip
 	},

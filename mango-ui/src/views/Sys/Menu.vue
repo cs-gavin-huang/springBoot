@@ -140,7 +140,7 @@ import FaIconTooltip from "@/components/FaIconTooltip";
 export default {
   components: {
     PopupTreeInput,
-    SysMButton,
+		'sysm-button': SysMButton,
     TableTreeColumn,
     FaIconTooltip
   },
