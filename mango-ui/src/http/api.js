@@ -1,15 +1,13 @@
 /* 
  * 接口统一集成模块
  */
-import * as login from './modules/login'
-import * as user from './modules/user'
-import * as dept from './modules/dept'
-import * as role from './modules/role'
-import * as menu from './modules/menu'
-import * as dict from './modules/dict'
-import * as config from './modules/config'
-import * as log from './modules/log'
-import * as loginlog from './modules/loginlog'
+import * as login from './moudules/login'
+import * as user from './moudules/user'
+import * as dept from './moudules/dept'
+import * as role from './moudules/role'
+import * as menu from './moudules/menu'
+import * as dict from './moudules/dict'
+import * as log from './moudules/log'
 
 
 // 默认全部导出
@@ -20,7 +18,5 @@ export default {
     role,
     menu,
     dict,
-    config,
-    log,
-    loginlog
+    log
 }

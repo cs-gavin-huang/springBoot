@@ -1,27 +1,27 @@
 <template>
   <div>
     <!--表格栏-->
-    <el-table :data="data.content" :highlight-current-row="highlightCurrentRow" @selection-change="selectionChange"
+    <el-table :data="data.content" :highlight-current-row="highlightCurrentRow" @selection-change="selectionChange" 
           @current-change="handleCurrentChange" v-loading="loading" :element-loading-text="$t('action.loading')" :border="border" :stripe="stripe"
-          :show-overflow-tooltip="showOverflowTooltip" :max-height="maxHeight" :size="size" :align="align" style="width:100%;" >
+          :show-overflow-tooltip="showOverflowTooltip" :max-height="maxHeight" :height="height" :size="size" :align="align" style="width:100%;" >
       <el-table-column type="selection" width="40" v-if="showBatchDelete & showOperation"></el-table-column>
       <el-table-column v-for="column in columns" header-align="center" align="center"
-        :prop="column.prop" :label="column.label" :width="column.width" :min-width="column.minWidth"
+        :prop="column.prop" :label="column.label" :width="column.width" :min-width="column.minWidth" 
         :fixed="column.fixed" :key="column.prop" :type="column.type" :formatter="column.formatter"
         :sortable="column.sortable==null?true:column.sortable">
       </el-table-column>
       <el-table-column :label="$t('action.operation')" width="185" fixed="right" v-if="showOperation" header-align="center" align="center">
         <template slot-scope="scope">
-          <sysm-button icon="fa fa-edit" :label="$t('action.edit')" :perms="permsEdit" :size="size" @click="handleEdit(scope.$index, scope.row)" />
-          <sysm-button icon="fa fa-trash" :label="$t('action.delete')" :perms="permsDelete" :size="size" type="danger" @click="handleDelete(scope.$index, scope.row)" />
+          <kt-button icon="fa fa-edit" :label="$t('action.edit')" :perms="permsEdit" :size="size" @click="handleEdit(scope.$index, scope.row)" />
+          <kt-button icon="fa fa-trash" :label="$t('action.delete')" :perms="permsDelete" :size="size" type="danger" @click="handleDelete(scope.$index, scope.row)" />
         </template>
       </el-table-column>
     </el-table>
     <!--分页栏-->
     <div class="toolbar" style="padding:10px;">
-      <sysm-button :label="$t('action.batchDelete')" :perms="permsDelete" :size="size" type="danger" @click="handleBatchDelete()"
+      <kt-button :label="$t('action.batchDelete')" :perms="permsDelete" :size="size" type="danger" @click="handleBatchDelete()" 
         :disabled="this.selections.length===0" style="float:left;" v-if="showBatchDelete & showOperation"/>
-      <el-pagination layout="total, prev, pager, next, jumper" @current-change="refreshPageRequest"
+      <el-pagination layout="total, prev, pager, next, jumper" @current-change="refreshPageRequest" 
         :current-page="pageRequest.pageNum" :page-size="pageRequest.pageSize" :total="data.totalSize" style="float:right;">
       </el-pagination>
     </div>
@@ -29,11 +29,11 @@
 </template>
 
 <script>
-import SysMButton from "@/views/Core/SysMButton"
+import KtButton from "@/views/Core/KtButton"
 export default {
-  name: 'SysMTable',
+  name: 'KtTable',
   components:{
-			'sysm-button': SysMButton
+			KtButton
 	},
   props: {
     columns: Array, // 表格列配置
@@ -50,7 +50,11 @@ export default {
     },
     maxHeight: {  // 表格最大高度
       type: Number,
-      default: 440
+      default: 420
+    },
+    height: {  // 表格最大高度
+      type: Number,
+      default: 250
     },
     showOperation: {  // 是否显示操作组件
       type: Boolean,
@@ -82,7 +86,7 @@ export default {
       // 分页信息
 			pageRequest: {
 				pageNum: 1,
-        pageSize: 9
+        pageSize: 10
       },
       loading: false,  // 加载标识
       selections: []  // 列表选中列

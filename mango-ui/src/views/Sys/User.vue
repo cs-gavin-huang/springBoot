@@ -7,10 +7,10 @@
 				<el-input v-model="filters.name" placeholder="用户名"></el-input>
 			</el-form-item>
 			<el-form-item>
-				<sysm-button icon="fa fa-search" :label="$t('action.search')" perms="sys:role:view" type="primary" @click="findPage(null)"/>
+				<kt-button icon="fa fa-search" :label="$t('action.search')" perms="sys:role:view" type="primary" @click="findPage(null)"/>
 			</el-form-item>
 			<el-form-item>
-				<sysm-button icon="fa fa-plus" :label="$t('action.add')" perms="sys:user:add" type="primary" @click="handleAdd" />
+				<kt-button icon="fa fa-plus" :label="$t('action.add')" perms="sys:user:add" type="primary" @click="handleAdd" />
 			</el-form-item>
 		</el-form>
 	</div>
@@ -24,22 +24,22 @@
 				<el-tooltip content="列显示" placement="top">
 					<el-button icon="fa fa-filter" @click="displayFilterColumnsDialog"></el-button>
 				</el-tooltip>
-				<el-tooltip content="导出" placement="top">
-					<el-button icon="fa fa-file-excel-o" @click="exportUserExcelFile"></el-button>
-				</el-tooltip>
+				<!-- <el-tooltip content="导出" placement="top">
+					<el-button icon="fa fa-file-excel-o"></el-button>
+				</el-tooltip> -->
 				</el-button-group>
 			</el-form-item>
 		</el-form>
 		<!--表格显示列界面-->
-		<table-column-filter-dialog ref="tableColumnFilterDialog" :columns="columns"
-			@handleFilterColumns="handleFilterColumns">
+		<table-column-filter-dialog ref="tableColumnFilterDialog" :columns="columns" 
+			@handleFilterColumns="handleFilterColumns"> 
 		</table-column-filter-dialog>
 	</div>
 	<!--表格内容栏-->
-	<sysm-table permsEdit="sys:user:edit" permsDelete="sys:user:delete"
+	<kt-table :height="350" permsEdit="sys:user:edit" permsDelete="sys:user:delete"
 		:data="pageResult" :columns="filterColumns"
 		@findPage="findPage" @handleEdit="handleEdit" @handleDelete="handleDelete">
-	</sysm-table>
+	</kt-table>
 	<!--新增编辑界面-->
 	<el-dialog :title="operation?'新增':'编辑'" width="40%" :visible.sync="dialogVisible" :close-on-click-modal="false">
 		<el-form :model="dataForm" label-width="80px" :rules="dataFormRules" ref="dataForm" :size="size"
@@ -50,18 +50,15 @@
 			<el-form-item label="用户名" prop="name">
 				<el-input v-model="dataForm.name" auto-complete="off"></el-input>
 			</el-form-item>
-			<el-form-item label="昵称" prop="nickName">
-				<el-input v-model="dataForm.nickName" auto-complete="off"></el-input>
-			</el-form-item>
 			<el-form-item label="密码" prop="password">
 				<el-input v-model="dataForm.password" type="password" auto-complete="off"></el-input>
 			</el-form-item>
 			<el-form-item label="机构" prop="deptName">
-				<popup-tree-input
-					:data="deptData"
-					:props="deptTreeProps"
-					:prop="dataForm.deptName"
-					:nodeKey="''+dataForm.deptId"
+				<popup-tree-input 
+					:data="deptData" 
+					:props="deptTreeProps" 
+					:prop="dataForm.deptName" 
+					:nodeKey="''+dataForm.deptId" 
 					:currentChangeHandle="deptTreeCurrentChangeHandle">
 				</popup-tree-input>
 			</el-form-item>
@@ -90,15 +87,15 @@
 
 <script>
 import PopupTreeInput from "@/components/PopupTreeInput"
-import SysMTable from "@/views/Core/SysMTable"
-import SysMButton from "@/views/Core/SysMButton"
+import KtTable from "@/views/Core/KtTable"
+import KtButton from "@/views/Core/KtButton"
 import TableColumnFilterDialog from "@/views/Core/TableColumnFilterDialog"
 import { format } from "@/utils/datetime"
 export default {
 	components:{
 		PopupTreeInput,
-			'sysm-table': SysMTable,
-			'sysm-button': SysMButton,
+		KtTable,
+		KtButton,
 		TableColumnFilterDialog
 	},
 	data() {
@@ -109,7 +106,7 @@ export default {
 			},
 			columns: [],
 			filterColumns: [],
-			pageRequest: { pageNum: 1, pageSize: 8 },
+			pageRequest: { pageNum: 1, pageSize: 10 },
 			pageResult: {},
 
 			operation: false, // true:新增, false:编辑
@@ -146,29 +143,17 @@ export default {
 			if(data !== null) {
 				this.pageRequest = data.pageRequest
 			}
-			this.pageRequest.params = [{name:'name', value:this.filters.name}]
+			this.pageRequest.columnFilters = {name: {name:'name', value:this.filters.name}}
 			this.$api.user.findPage(this.pageRequest).then((res) => {
 				this.pageResult = res.data
 				this.findUserRoles()
 			}).then(data!=null?data.callback:'')
 		},
-		// 导出Excel用户信息
-		exportUserExcelFile: function () {
-			this.pageRequest.pageSize = 100000
-			this.pageRequest.params = [{name:'name', value:this.filters.name}]
-			this.$api.user.exportUserExcelFile(this.pageRequest).then((res) => {
-				this.$alert(res.data, '导出成功', {
-					confirmButtonText: '确定',
-					callback: action => {
-					}
-				})
-			})
-		},
 		// 加载用户角色信息
 		findUserRoles: function () {
 			this.$api.role.findAll().then((res) => {
 				// 加载角色集合
-				this.roles = res.data
+				this.roles = res.data	
 			})
 		},
 		// 批量删除
@@ -262,7 +247,6 @@ export default {
 			this.columns = [
 				{prop:"id", label:"ID", minWidth:50},
 				{prop:"name", label:"用户名", minWidth:120},
-				{prop:"nickName", label:"昵称", minWidth:120},
 				{prop:"deptName", label:"机构", minWidth:120},
 				{prop:"roleNames", label:"角色", minWidth:100},
 				{prop:"email", label:"邮箱", minWidth:120},

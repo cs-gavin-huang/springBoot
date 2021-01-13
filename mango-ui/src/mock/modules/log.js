@@ -1,13 +1,5 @@
-/*
- * @Author: geekli
- * @Date: 2021-01-01 10:30:49
- * @LastEditTime: 2021-01-01 10:38:00
- * @LastEditors: your name
- * @Description:
- * @FilePath: /mango-ui/src/mock/modules/log.js
- */
-/*
- * 操作日志模块
+/* 
+ * 日志管理模块
  */
 
 // 分页查询
@@ -53,9 +45,9 @@ export function getContent(pageNum, pageSize) {
 
     }
     obj.createBy= 'admin'
-    obj.createTime= '2020-08-14 11:11:11'
+    obj.createTime= '2018-08-14 11:11:11'
     obj.createBy= 'admin'
-    obj.createTime= '2020-09-14 12:12:12'
+    obj.createTime= '2018-09-14 12:12:12'
     content.push(obj)
   }
   return content

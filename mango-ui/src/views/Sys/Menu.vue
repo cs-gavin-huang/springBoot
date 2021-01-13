@@ -7,20 +7,20 @@
 				<el-input v-model="filters.name" placeholder="名称"></el-input>
 			</el-form-item>
 			<el-form-item>
-				<sysm-button icon="fa fa-search" :label="$t('action.search')" perms="sys:menu:view" type="primary" @click="findTreeData(null)"/>
+				<kt-button icon="fa fa-search" :label="$t('action.search')" perms="sys:menu:view" type="primary" @click="findTreeData(null)"/>
 			</el-form-item>
 			<el-form-item>
-				<sysm-button icon="fa fa-plus" :label="$t('action.add')" perms="sys:menu:add" type="primary" @click="handleAdd"/>
+				<kt-button icon="fa fa-plus" :label="$t('action.add')" perms="sys:menu:add" type="primary" @click="handleAdd"/>
 			</el-form-item>
 		</el-form>
 	</div>
 	<!--表格树内容栏-->
     <el-table :data="tableTreeDdata" stripe size="mini" style="width: 100%;"
-      v-loading="loading" rowKey="id" element-loading-text="$t('action.loading')">
+      rowKey="id" v-loading="loading" element-loading-text="$t('action.loading')">
       <el-table-column
         prop="id" header-align="center" align="center" width="80" label="ID">
       </el-table-column>
-      <table-tree-column
+      <table-tree-column 
         prop="name" header-align="center" treeKey="id" width="150" label="名称">
       </table-tree-column>
       <el-table-column header-align="center" align="center" label="图标">
@@ -35,15 +35,15 @@
           <el-tag v-else-if="scope.row.type === 2" size="small" type="info">按钮</el-tag>
         </template>
       </el-table-column>
-      <el-table-column
+      <el-table-column 
         prop="parentName" header-align="center" align="center" width="120" label="上级菜单">
       </el-table-column>
       <el-table-column
-        prop="url" header-align="center" align="center" width="150"
+        prop="url" header-align="center" align="center" width="150" 
         :show-overflow-tooltip="true" label="菜单URL">
       </el-table-column>
       <el-table-column
-        prop="perms" header-align="center" align="center" width="150"
+        prop="perms" header-align="center" align="center" width="150" 
         :show-overflow-tooltip="true" label="授权标识">
       </el-table-column>
       <el-table-column
@@ -52,14 +52,14 @@
       <el-table-column
         fixed="right" header-align="center" align="center" width="185" :label="$t('action.operation')">
         <template slot-scope="scope">
-          <sysm-button icon="fa fa-edit" :label="$t('action.edit')" perms="sys:menu:edit" @click="handleEdit(scope.row)"/>
-          <sysm-button icon="fa fa-trash" :label="$t('action.delete')" perms="sys:menu:delete" type="danger" @click="handleDelete(scope.row)"/>
+          <kt-button icon="fa fa-edit" :label="$t('action.edit')" perms="sys:menu:edit" @click="handleEdit(scope.row)"/>
+          <kt-button icon="fa fa-trash" :label="$t('action.delete')" perms="sys:menu:delete" type="danger" @click="handleDelete(scope.row)"/>
         </template>
       </el-table-column>
     </el-table>
     <!-- 新增修改界面 -->
     <el-dialog :title="!dataForm.id ? '新增' : '修改'" width="40%" :visible.sync="dialogVisible" :close-on-click-modal="false">
-      <el-form :model="dataForm" :rules="dataRule" ref="dataForm" @keyup.enter.native="submitForm()"
+      <el-form :model="dataForm" :rules="dataRule" ref="dataForm" @keyup.enter.native="submitForm()" 
         label-width="80px" :size="size" style="text-align:left;">
         <el-form-item label="菜单类型" prop="type">
           <el-radio-group v-model="dataForm.type">
@@ -70,8 +70,8 @@
           <el-input v-model="dataForm.name" :placeholder="menuTypeList[dataForm.type] + '名称'"></el-input>
         </el-form-item>
         <el-form-item label="上级菜单" prop="parentName">
-            <popup-tree-input
-              :data="popupTreeData" :props="popupTreeProps" :prop="dataForm.parentName==null||dataForm.parentName==''?'顶级菜单':dataForm.parentName"
+            <popup-tree-input 
+              :data="popupTreeData" :props="popupTreeProps" :prop="dataForm.parentName==null||dataForm.parentName==''?'顶级菜单':dataForm.parentName" 
               :nodeKey="''+dataForm.parentId" :currentChangeHandle="handleTreeSelectChange">
             </popup-tree-input>
         </el-form-item>
@@ -133,14 +133,14 @@
 </template>
 
 <script>
-import SysMButton from "@/views/Core/SysMButton";
+import KtButton from "@/views/Core/KtButton";
 import TableTreeColumn from "@/views/Core/TableTreeColumn";
 import PopupTreeInput from "@/components/PopupTreeInput";
 import FaIconTooltip from "@/components/FaIconTooltip";
 export default {
   components: {
     PopupTreeInput,
-		'sysm-button': SysMButton,
+    KtButton,
     TableTreeColumn,
     FaIconTooltip
   },

@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Cookies from "js-cookie"
 import Login from '@/views/Login'
-import NotFound from '@/views/404'
+import NotFound from '@/views/Error/404'
 import Home from '@/views/Home'
 import Intro from '@/views/Intro/Intro'
+
 import api from '@/http/api'
 import store from '@/store'
 import { getIFramePath, getIFrameUrl } from '@/utils/iframe'
@@ -17,9 +19,9 @@ const router = new Router({
       name: '首页',
       component: Home,
       children: [
-        { 
-          path: '', 
-          name: '系统介绍', 
+        {
+          path: '',
+          name: '系统介绍',
           component: Intro,
           meta: {
             icon: 'fa fa-home fa-lg',
@@ -44,16 +46,17 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
   // 登录界面登录成功之后，会把用户信息保存在会话
   // 存在时间为会话生命周期，页面关闭即失效。
+  let token = Cookies.get('token')
   let userName = sessionStorage.getItem('user')
   if (to.path === '/login') {
     // 如果是访问登录界面，如果用户会话信息存在，代表已登录过，跳转到主页
-    if(userName) {
+    if(token) {
       next({ path: '/' })
     } else {
       next()
     }
   } else {
-    if (!userName) {
+    if (!token) {
       // 如果访问非登录界面，且户会话信息不存在，代表未登录，则跳转到登录界面
       next({ path: '/login' })
     } else {
@@ -79,7 +82,7 @@ function addDynamicMenuAndRoutes(userName, to, from) {
     // 添加动态路由
     let dynamicRoutes = addDynamicRoutes(res.data)
     // 处理静态组件绑定路由
-    router.options.routes[0].children = router.options.routes[0].children.concat(dynamicRoutes)
+    handleStaticComponent(router, dynamicRoutes)
     router.addRoutes(router.options.routes)
     // 保存加载状态
     store.commit('menuRouteLoaded', true)

@@ -1,12 +1,15 @@
 <template>
-  <el-color-picker class="theme-picker" popper-class="theme-picker-dropdown"
-    v-model="theme" :size="size">
+  <el-color-picker
+    class="theme-picker"
+    popper-class="theme-picker-dropdown"
+    v-model="theme" 
+    :size="size">
   </el-color-picker>
 </template>
 
 <script>
 
-const version = require('element-ui/package.json').version // element-ui
+const version = require('element-ui/package.json').version // element-ui version from node_modules
 const ORIGINAL_THEME = '#409EFF' // default color
 
 export default {
@@ -38,7 +41,6 @@ export default {
   watch: {
     theme(val, oldVal) {
       if (typeof val !== 'string') return
-      // 替换CSS样式，修改主题色
       const themeCluster = this.getThemeCluster(val.replace('#', ''))
       const originalCluster = this.getThemeCluster(oldVal.replace('#', ''))
       console.log(themeCluster, originalCluster)
@@ -56,13 +58,16 @@ export default {
           styleTag.innerText = newStyle
         }
       }
+
       const chalkHandler = getHandler('chalk', 'chalk-style')
+
       if (!this.chalk) {
         const url = `https://unpkg.com/element-ui@${version}/lib/theme-chalk/index.css`
         this.getCSSString(url, chalkHandler, 'chalk')
       } else {
         chalkHandler()
       }
+
       const styles = [].slice.call(document.querySelectorAll('style'))
         .filter(style => {
           const text = style.innerText
@@ -73,10 +78,14 @@ export default {
         if (typeof innerText !== 'string') return
         style.innerText = this.updateStyle(innerText, originalCluster, themeCluster)
       })
+      
       // 响应外部操作
       this.$emit('onThemeChange', val)
       if(this.showSuccess) {
-        this.$message({ message: '换肤成功', type: 'success' })
+        this.$message({
+          message: '换肤成功',
+          type: 'success'
+        })
       } else {
         this.showSuccess = true
       }

@@ -11,7 +11,7 @@ export default {
     return {
       src: "",
       loading: null
-    }
+    };
   },
   methods: {
     // 获取路径
@@ -46,7 +46,7 @@ export default {
       }
     }
   }
-}
+};
 </script>
 
 <style lang="scss">

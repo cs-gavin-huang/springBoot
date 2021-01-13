@@ -4,12 +4,11 @@
       <el-carousel-item class="carousel-item-intro">
         <h2>项目介绍</h2>
         <ul>
-          <li>基于 Spring Boot、Spring Cloud、Vue、Element 的 Java EE 权限管理系统</li>
+          <li>基于 Spring Boot、Spring Cloud、Vue、Element 的 Java EE权限管理后台</li>
         </ul>
-        <div><img src="@/assets/logo.png" style="width:120px;height:120px;padding-top:15px;" /></div>
       </el-carousel-item>
       <el-carousel-item class="carousel-item-func">
-        <h2>功能</h2>
+        <h2>功能路线</h2>
         <ul>
           <li>✔ 系统登录：系统用户登录，系统登录认证（token方式）</li>
           <li>✔ 用户管理：新建用户，修改用户，删除用户，查询用户</li>
@@ -23,12 +22,13 @@
           <li>✔ 主题切换：支持主题切换，自定主题颜色，一键换肤</li>
           <li>✔ 服务治理：集成Spring Cloud，实现全方位服务治理</li>
           <li>✔ 服务监控：集成Spring Boot Admin，实现微服务监控</li>
+          <li>...</li>
         </ul>
       </el-carousel-item>
       <el-carousel-item class="carousel-item-env">
         <h2>开发环境</h2>
         <ul>
-          <li>IDE : idea 2020。     JDK : JDK 1.8.x。</li>
+          <li>IDE : IDEA 2020。     JDK : JDK 1.8.x。</li>
           <li>Maven : Maven 3.5.x。   MySQL: MySQL 5.7.x。</li>
           <li>IDE : VS Code 1.27。    Webpack：webpack 3.2.x。</li>
           <li>NODE: Node 8.9.x。      NPM : NPM 6.4.x。</li>
@@ -40,6 +40,7 @@
           <li>数据库连接池：Druid 1.x。    安全框架：Shiro 1.4.x。</li>
           <li>前端框架：Vue.js 2.x。       页面组件：Element 2.x。</li>
           <li>状态管理：Vuex.js 2.x。      后台交互：axios 0.18.x。</li>
+          <li>...</li>
         </ul>
       </el-carousel-item>
     </el-carousel>

@@ -7,18 +7,18 @@
 				<el-input v-model="filters.label" placeholder="名称"></el-input>
 			</el-form-item>
 			<el-form-item>
-				<sysm-button icon="fa fa-search" :label="$t('action.search')" perms="sys:dict:view" type="primary" @click="findPage(null)"/>
+				<kt-button icon="fa fa-search" :label="$t('action.search')" perms="sys:dict:view" type="primary" @click="findPage(null)"/>
 			</el-form-item>
 			<el-form-item>
-				<sysm-button icon="fa fa-plus" :label="$t('action.add')" perms="sys:dict:add" type="primary" @click="handleAdd" />
+				<kt-button icon="fa fa-plus" :label="$t('action.add')" perms="sys:dict:add" type="primary" @click="handleAdd" />
 			</el-form-item>
 		</el-form>
 	</div>
 	<!--表格内容栏-->
-	<sysm-table permsEdit="sys:dict:edit" permsDelete="sys:dict:delete"
-		:data="pageResult" :columns="columns"
+	<kt-table :height="350" permsEdit="sys:dict:edit" permsDelete="sys:dict:delete"
+		:data="pageResult" :columns="columns" 
 		@findPage="findPage" @handleEdit="handleEdit" @handleDelete="handleDelete">
-	</sysm-table>
+	</kt-table>
 	<!--新增编辑界面-->
 	<el-dialog :title="operation?'新增':'编辑'" width="40%" :visible.sync="editDialogVisible" :close-on-click-modal="false">
 		<el-form :model="dataForm" label-width="80px" :rules="dataFormRules" ref="dataForm" :size="size">
@@ -53,13 +53,13 @@
 </template>
 
 <script>
-import SysMTable from "@/views/Core/SysMTable"
-import SysMButton from "@/views/Core/SysMButton"
+import KtTable from "@/views/Core/KtTable"
+import KtButton from "@/views/Core/KtButton"
 import { format } from "@/utils/datetime"
 export default {
 	components:{
-			'sysm-table': SysMTable,
-			'sysm-button': SysMButton
+			KtTable,
+			KtButton
 	},
 	data() {
 		return {
@@ -109,7 +109,7 @@ export default {
 			if(data !== null) {
 				this.pageRequest = data.pageRequest
 			}
-			this.pageRequest.params = [{name:'label', value:this.filters.label}]
+			this.pageRequest.columnFilters = {label: {name:'label', value:this.filters.label}}
 			this.$api.dict.findPage(this.pageRequest).then((res) => {
 				this.pageResult = res.data
 			}).then(data!=null?data.callback:'')

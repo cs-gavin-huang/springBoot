@@ -8,7 +8,7 @@
 <script>
 import { hasPermission } from '@/permission/index.js'
 export default {
-  name: 'SysMButton',
+  name: 'KtButton',
   props: {
     label: {  // 按钮显示文本
       type: String,
@@ -47,7 +47,7 @@ export default {
     handleClick: function () {
       // 按钮操作处理函数
       this.$emit('click', {})
-    },
+    }, 
     hasPerms: function (perms) {
       // 根据权限标识和外部指示状态进行权限判断
       return hasPermission(perms) & !this.disabled

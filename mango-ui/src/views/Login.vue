@@ -3,6 +3,8 @@
     <span class="tool-bar">
       <!-- 主题切换 -->
       <theme-picker style="float:right;" class="theme-picker" :default="themeColor" @onThemeChange="onThemeChange"></theme-picker>
+      <!-- 语言切换 -->
+      <!-- <lang-selector class="lang-selector"></lang-selector>    -->
     </span>
     <h2 class="title" style="padding-left:22px;" >系统登录</h2>
     <el-form-item prop="account">
@@ -26,6 +28,7 @@
         </el-form-item>
       </el-col>
     </el-form-item>
+    <!-- <el-checkbox v-model="checked" checked class="remember">记住密码</el-checkbox> -->
     <el-form-item style="width:100%;">
       <el-button type="primary" style="width:48%;" @click.native.prevent="reset">重 置</el-button>
       <el-button type="primary" style="width:48%;" @click.native.prevent="login" :loading="loading">登 录</el-button>
@@ -37,10 +40,12 @@
 import { mapState } from 'vuex'
 import Cookies from "js-cookie"
 import ThemePicker from "@/components/ThemePicker"
+import LangSelector from "@/components/LangSelector"
 export default {
   name: 'Login',
   components:{
-    ThemePicker
+    ThemePicker,
+    LangSelector
   },
   data() {
     return {
@@ -58,6 +63,10 @@ export default {
         password: [
           { required: true, message: '请输入密码', trigger: 'blur' }
         ]
+        // ,
+        // captcha: [
+        //   { required: true, message: '请输入验证码', trigger: 'blur' }
+        // ]
       },
       checked: true
     }

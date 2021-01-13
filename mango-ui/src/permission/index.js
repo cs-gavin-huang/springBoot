@@ -15,3 +15,5 @@ export function hasPermission (perms) {
     }
     return hasPermission
 }
+  
+  

@@ -7,18 +7,18 @@
 				<el-input v-model="filters.name" placeholder="角色名"></el-input>
 			</el-form-item>
 			<el-form-item>
-				<sysm-button icon="fa fa-search" :label="$t('action.search')" perms="sys:role:view" type="primary" @click="findPage(null)"/>
+				<kt-button icon="fa fa-search" :label="$t('action.search')" perms="sys:role:view" type="primary" @click="findPage(null)"/>
 			</el-form-item>
 			<el-form-item>
-				<sysm-button icon="fa fa-plus" :label="$t('action.add')" perms="sys:role:add" type="primary" @click="handleAdd" />
+				<kt-button icon="fa fa-plus" :label="$t('action.add')" perms="sys:role:add" type="primary" @click="handleAdd" />
 			</el-form-item>
 		</el-form>
 	</div>
 	<!--表格内容栏-->
-	<sysm-table permsEdit="sys:role:edit" permsDelete="sys:role:delete" :highlightCurrentRow="true" :stripe="false"
+	<kt-table :height="220" permsEdit="sys:role:edit" permsDelete="sys:role:delete" :highlightCurrentRow="true" :stripe="false"
 		:data="pageResult" :columns="columns" :showBatchDelete="false" @handleCurrentChange="handleRoleSelectChange"
 		@findPage="findPage" @handleEdit="handleEdit" @handleDelete="handleDelete">
-	</sysm-table>
+	</kt-table>
 	<!-- </el-col> -->
 	<!--新增编辑界面-->
 	<el-dialog :title="operation?'新增':'编辑'" width="40%" :visible.sync="dialogVisible" :close-on-click-modal="false">
@@ -52,9 +52,9 @@
 			<el-checkbox v-model="checkAll" @change="handleCheckAll" :disabled="this.selectRole.id == null"><b>全选</b></el-checkbox>
 		</div>
 		<div style="float:right;padding-right:15px;padding-top:4px;padding-bottom:4px;">
-			<sysm-button :label="$t('action.reset')" perms="sys:role:edit" type="primary" @click="resetSelection"
+			<kt-button :label="$t('action.reset')" perms="sys:role:edit" type="primary" @click="resetSelection" 
 				:disabled="this.selectRole.id == null"/>
-			<sysm-button :label="$t('action.submit')" perms="sys:role:edit" type="primary" @click="submitAuthForm"
+			<kt-button :label="$t('action.submit')" perms="sys:role:edit" type="primary" @click="submitAuthForm" 
 				:disabled="this.selectRole.id == null" :loading="authLoading"/>
 		</div>
 	</div>
@@ -62,14 +62,14 @@
 </template>
 
 <script>
-import SysMTable from "@/views/Core/SysMTable"
-import SysMButton from "@/views/Core/SysMButton"
+import KtTable from "@/views/Core/KtTable"
+import KtButton from "@/views/Core/KtButton"
 import TableTreeColumn from '@/views/Core/TableTreeColumn'
 import { format } from "@/utils/datetime"
 export default {
 	components:{
-			'sysm-table': SysMTable,
-			'sysm-button': SysMButton,
+		KtTable,
+		KtButton,
 		TableTreeColumn
 	},
 	data() {
@@ -123,7 +123,7 @@ export default {
 			if(data !== null) {
 				this.pageRequest = data.pageRequest
 			}
-			this.pageRequest.params = [{name:'name', value:this.filters.name}]
+			this.pageRequest.columnFilters = {name: {name:'name', value:this.filters.name}}
 			this.$api.role.findPage(this.pageRequest).then((res) => {
 				this.pageResult = res.data
 				this.findTreeData()
@@ -270,7 +270,7 @@ export default {
       	dateFormat: function (row, column, cellValue, index){
           	return format(row[column.property])
       	}
-
+		
 	},
 	mounted() {
 	}
@@ -286,6 +286,6 @@ export default {
 	text-align: left;
 	font-size: 16px;
 	color: rgb(20, 89, 121);
-
+	
 }
 </style>

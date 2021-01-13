@@ -1,12 +1,4 @@
-/*
- * @Author: geekli
- * @Date: 2021-01-01 10:45:12
- * @LastEditTime: 2021-01-01 10:45:21
- * @LastEditors: your name
- * @Description:
- * @FilePath: /mango-ui/src/mock/modules/login.js
- */
-/*
+/* 
  * 系统登录模块
  */
 
@@ -19,11 +11,11 @@ export function login() {
       "id": null,
       "userId": 1,
       "token": "77ae89be36504adfb5c09ef71409ea0e",
-      "expireTime": "2020-09-01T16:24:50.473+0000",
+      "expireTime": "2018-09-01T16:24:50.473+0000",
       "createBy": null,
       "createTime": null,
       "lastUpdateBy": null,
-      "lastUpdateTime": "2020-09-01T04:24:50.473+0000"
+      "lastUpdateTime": "2018-09-01T04:24:50.473+0000"
     }
   }
   return {

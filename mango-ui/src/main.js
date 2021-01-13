@@ -8,11 +8,12 @@ import global from '@/utils/global'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import 'font-awesome/css/font-awesome.min.css'
+import '@/assets/iconfont/iconfont.css'
 
-Vue.use(ElementUI)  // 注册使用Element
-Vue.use(api)  // 注册使用API模块
+Vue.use(ElementUI)
+Vue.use(api)
 
-Vue.prototype.global = global // 挂载全局配置模块
+Vue.prototype.global = global
 
 new Vue({
   el: '#app',
@@ -20,4 +21,4 @@ new Vue({
   router,
   store,
   render: h => h(App)
-})
+});

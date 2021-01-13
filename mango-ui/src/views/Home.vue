@@ -10,9 +10,9 @@
 </template>
 
 <script>
-import HeadBar from "./HeadBar"
-import NavBar from "./NavBar"
-import MainContent from "./MainContent"
+import HeadBar from "./HeadBar/HeadBar"
+import NavBar from "./NavBar/NavBar"
+import MainContent from "./MainContent/MainContent"
 export default {
   components:{
         HeadBar,

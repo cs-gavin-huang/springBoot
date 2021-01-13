@@ -1,11 +1,3 @@
-<!--
- * @Author: geekli
- * @Date: 2020-12-21 09:03:59
- * @LastEditTime: 2021-01-12 19:55:39
- * @LastEditors: your name
- * @Description:
- * @FilePath: /springBoot/mango-ui/src/views/Sys/Log.vue
--->
 <template>
   <div class="page-container">
 	<!--工具栏-->
@@ -15,25 +7,25 @@
 				<el-input v-model="filters.name" placeholder="用户名"></el-input>
 			</el-form-item>
 			<el-form-item>
-				<sysm-button icon="fa fa-search" :label="$t('action.search')" perms="sys:log:view" type="primary" @click="findPage(null)"/>
+				<kt-button icon="fa fa-search" :label="$t('action.search')" perms="sys:log:view" type="primary" @click="findPage(null)"/>
 			</el-form-item>
 		</el-form>
 	</div>
 	<!--表格内容栏-->
-	<sysm-table
+	<kt-table :height="350" 
     :data="pageResult" :columns="columns" :showOperation="showOperation" @findPage="findPage">
-	</sysm-table>
+	</kt-table>
   </div>
 </template>
 
 <script>
-import SysMTable from "@/views/Core/SysMTable"
-import SysMButton from "@/views/Core/SysMButton"
+import KtTable from "@/views/Core/KtTable"
+import KtButton from "@/views/Core/KtButton"
 import { format } from "@/utils/datetime"
 export default {
 	components: {
-			'sysm-table': SysMTable,
-			'sysm-button': SysMButton
+		KtTable,
+		KtButton
 	},
 	data() {
 		return {
@@ -65,7 +57,7 @@ export default {
 			if(data !== null) {
 				this.pageRequest = data.pageRequest
 			}
-			this.pageRequest.params = [{name:'userName', value:this.filters.name}]
+			this.pageRequest.columnFilters = {userName: {name:'userName', value:this.filters.name}}
 			this.$api.log.findPage(this.pageRequest).then((res) => {
 				this.pageResult = res.data
 			}).then(data!=null?data.callback:'')

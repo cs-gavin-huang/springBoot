@@ -19,7 +19,7 @@ mango:
       host: localhost
       userName: root
       password: 999617
-      database: sys_manager
+      database: kitty
 # 开放健康检查接口
 management:
   endpoints:
